@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth; /* Smooth scrolling between sections */
+        }
+
+        .cover-page {
+            height: 100vh;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient);
+            transition: background 1s ease; /* Smooth transition */
+        }
+
+        .cover-page h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .cover-page p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .cover-page .btn {
+            font-size: 1.25rem;
+            background-color: #007bff;
+            color: white;
+        }
+        .cover-page .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cover-page h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cover-page p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cover-page .btn {
+            font-size: 1.25rem;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cover-page .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            color: #333;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 10px 15px;
+        }
+
+        .project-item {
+            text-align: center;
+            position: relative; /* Ensure that the image can be animated */
+        }
+
+        .project-img {
+            width: auto; /* Set width to auto to maintain aspect ratio */
+            height: 300px; /* Set your desired height here */
+            max-width: 100%; /* Ensure the image does not exceed the container width */
+            border-radius: 8px; /* Optional: add border radius for a smoother look */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+            object-fit: cover; /* Ensure the image covers the specified height */
+        }
+
+        .project-img:hover {
+            transform: scale(1.1); /* Scale up the image on hover */
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin: 15px 0 5px;
+        }
+
+        .project-description {
+            color: #555;
+        }
+        .typing-container {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .cursor {
+            font-weight: normal;
+            font-size: 2rem;
+            margin-left: 5px;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!-- Cover Page Section -->
+<div class="cover-page" id="coverPage">
+    <div class="cover-content">
+        <h1>Ryan Ken M. Casem</h1>
+        <p id="typed-text"></p>
+        <a href="CV.pdf" class="btn">View My Resume</a>
+    </div>
+</div>
+
+    <!-- Main Resume Content -->
+    <div id="resume" class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">My Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education">Education</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header Section -->
+        <header class="bg-light text-center p-5 mt-5">
+            <img src="head.png" alt="Profile Picture" class="profile-img mb-3">
+            <h1>Ryan Ken M. Casem</h1>
+            <p>Newly Graduated Computer Engineer | Manila | Email: <a href="mailto:casem.ryanken@ue.edu.ph">casem.ryanken@ue.edu.ph</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ken.casem"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/ryynocerous/"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://github.com/RKCasem"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+            <a href="CV RK_CASEM.pdf" class="btn btn-primary mt-3" download="Ryan_Ken_Casem_Resume.pdf"><i class="fas fa-download"></i> Download Resume</a>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="container my-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title">About Me</h2>
+                    <p>I am a recent Computer Engineering graduate from the University of the East - Manila, with a passion for technology and a drive to continuously learn and improve. I am eager to start my career and apply my skills in real-world projects.</p>
+                </div>
+            </div>
+        </section>
+<!-- Experience and Education Section -->
+<section id="experience-education" class="container my-5">
+    <div class="row">
+        <!-- Education Section -->
+        <div class="col-md-6 mb-4">
+            <h2 class="section-title">Education</h2>
+            <div>
+                <h4>University of the East-Manila</h4>
+                <p><strong>Bachelor of Science in Computer Engineering | 2022 - 2026</strong></p>
+                <h4>St. Dominic College of Asia</h4>
+                <p><strong>STEM Program | 2020 - 2022</strong></p>
+                <h4>St. Dominic College of Asia</h4>
+                <p><strong>Secondary School | 2019 - 2020</strong></p>
+                <h4>Cavite School of St. Mark</h4>
+                <p><strong>Secondary School | 2017 - 2019</strong></p>
+                <h4>University of the Assumption</h4>
+                <p><strong>Primary School | 2010 - 2016</strong></p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="col-md-6 mb-4">
+            <h2 class="section-title">Skills</h2>
+            <ul class="list-inline">
+                <li class="list-inline-item badge  m-1"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d="M 5.28125 2 C 4.765625 2.09375 4.410156 2.574219 4.46875 3.09375 L 8 42.53125 C 8.046875 42.933594 8.332031 43.265625 8.71875 43.375 L 24.71875 47.96875 C 24.902344 48.023438 25.097656 48.023438 25.28125 47.96875 L 41.28125 43.375 C 41.667969 43.265625 41.953125 42.933594 42 42.53125 L 45.53125 3.09375 C 45.558594 2.8125 45.464844 2.535156 45.273438 2.324219 C 45.082031 2.117188 44.8125 2 44.53125 2 L 5.46875 2 C 5.4375 2 5.40625 2 5.375 2 C 5.34375 2 5.3125 2 5.28125 2 Z M 6.5625 4 L 43.4375 4 L 40.09375 41.65625 L 25 45.9375 L 9.90625 41.65625 Z M 12.53125 10.0625 C 12.015625 10.15625 11.660156 10.636719 11.71875 11.15625 L 13.0625 25.9375 C 13.09375 26.453125 13.515625 26.859375 14.03125 26.875 L 30 26.875 L 29.5625 31.46875 L 25.03125 32.4375 L 20.4375 31.46875 L 20.28125 29.84375 C 20.25 29.316406 19.808594 28.90625 19.28125 28.90625 L 14.40625 28.90625 C 14.125 28.90625 13.855469 29.023438 13.664063 29.230469 C 13.472656 29.441406 13.378906 29.71875 13.40625 30 L 13.96875 36.125 C 14 36.527344 14.269531 36.875 14.65625 37 L 24.59375 40.03125 L 24.71875 40.0625 C 24.902344 40.117188 25.097656 40.117188 25.28125 40.0625 L 35.34375 37 C 35.742188 36.886719 36.027344 36.539063 36.0625 36.125 L 37.375 21.09375 C 37.402344 20.816406 37.3125 20.542969 37.128906 20.335938 C 36.945313 20.128906 36.683594 20.007813 36.40625 20 L 19.375 20 L 19.125 16.90625 L 36.84375 16.90625 C 37.363281 16.910156 37.796875 16.515625 37.84375 16 L 38.28125 11.15625 C 38.308594 10.875 38.214844 10.597656 38.023438 10.386719 C 37.832031 10.179688 37.5625 10.0625 37.28125 10.0625 L 12.71875 10.0625 C 12.65625 10.054688 12.59375 10.054688 12.53125 10.0625 Z M 13.8125 12.0625 L 36.1875 12.0625 L 35.9375 14.90625 L 18.03125 14.90625 C 17.75 14.90625 17.480469 15.023438 17.289063 15.230469 C 17.097656 15.441406 17.003906 15.71875 17.03125 16 L 17.5 21.09375 C 17.546875 21.597656 17.964844 21.988281 18.46875 22 L 35.3125 22 L 34.125 35.28125 L 25 38.03125 L 15.875 35.28125 L 15.5 30.90625 L 18.375 30.90625 L 18.5 32.375 C 18.53125 32.816406 18.847656 33.183594 19.28125 33.28125 L 24.84375 34.4375 C 24.976563 34.464844 25.117188 34.464844 25.25 34.4375 L 30.71875 33.28125 C 31.152344 33.183594 31.46875 32.816406 31.5 32.375 L 32.09375 25.9375 C 32.109375 25.660156 32.011719 25.390625 31.824219 25.191406 C 31.632813 24.988281 31.371094 24.875 31.09375 24.875 L 14.9375 24.875 Z"></path>
+                    </svg></li>
+                <li class="list-inline-item badge m-1"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path fill-rule="evenodd" d="M 39 40 L 25 44 L 11 40 L 8 6 L 42 6 C 41 17.332031 40 28.667969 39 40 Z M 39.816406 8 L 10.183594 8 L 12.871094 38.453125 L 25 41.921875 L 37.128906 38.453125 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"></path>
+                    </svg></li>
+                <li class="list-inline-item badge m-1"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d="M 5.4648438 2 A 1.0001 1.0001 0 0 0 4.46875 3.0898438 L 7.9882812 42.515625 A 1.0001 1.0001 0 0 0 8.7089844 43.388672 L 24.71875 47.960938 A 1.0001 1.0001 0 0 0 25.267578 47.960938 L 41.292969 43.388672 A 1.0001 1.0001 0 0 0 42.013672 42.515625 L 45.53125 3.0898438 A 1.0001 1.0001 0 0 0 44.535156 2 L 5.4648438 2 z M 6.5585938 4 L 43.441406 4 L 40.083984 41.654297 L 24.994141 45.960938 L 9.9199219 41.654297 L 6.5585938 4 z M 19 10 A 1.0001 1.0001 0 0 0 18 11 L 18 29.628906 L 12.267578 28.041016 A 1.0001 1.0001 0 0 0 11 29.003906 L 11 33.949219 A 1.0001 1.0001 0 0 0 11.732422 34.912109 L 22.732422 37.962891 A 1.0001 1.0001 0 0 0 24 37 L 24 11 A 1.0001 1.0001 0 0 0 23 10 L 19 10 z M 27 10 A 1.0001 1.0001 0 0 0 26 11 L 26 28 A 1.0001 1.0001 0 0 0 27.169922 28.986328 L 32.917969 27.996094 L 32.798828 29.767578 L 26.734375 31.435547 A 1.0001 1.0001 0 0 0 26 32.398438 L 26 37 A 1.0001 1.0001 0 0 0 27.265625 37.964844 L 37.265625 35.214844 A 1.0001 1.0001 0 0 0 37.996094 34.335938 L 39.050781 22.085938 A 1.0001 1.0001 0 0 0 37.914062 21.009766 L 32 21.847656 L 32 16 L 38.654297 16 A 1.0001 1.0001 0 0 0 39.650391 15.085938 L 39.996094 11.085938 A 1.0001 1.0001 0 0 0 39 10 L 27 10 z M 20 12 L 22 12 L 22 35.685547 L 13 33.189453 L 13 30.318359 L 18.732422 31.908203 A 1.0001 1.0001 0 0 0 20 30.945312 L 20 12 z M 28 12 L 37.910156 12 L 37.736328 14 L 31 14 A 1.0001 1.0001 0 0 0 30 15 L 30 23 A 1.0001 1.0001 0 0 0 31.140625 23.990234 L 36.951172 23.166016 L 36.0625 33.470703 L 28 35.6875 L 28 33.162109 L 34.015625 31.507812 A 1.0001 1.0001 0 0 0 34.748047 30.611328 L 34.998047 26.861328 A 1.0001 1.0001 0 0 0 33.830078 25.808594 L 28 26.8125 L 28 12 z"></path>
+                    </svg></li>
+                <li class="list-inline-item badge m-1"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 100 100">
+                    <path d="M72.748,82h-45.49c-2.291,0-4.441-0.921-6.056-2.593c-1.687-1.745-2.604-4.13-2.521-6.545	c0.128-3.676,0.004-8.957-1.318-13.241c-1.294-4.19-3.374-6.365-6.36-6.65c-0.514-0.049-0.905-0.479-0.905-0.995v-3.951	c0-0.516,0.392-0.946,0.905-0.995c2.986-0.285,5.066-2.46,6.36-6.65c1.322-4.284,1.446-9.565,1.318-13.241l0,0	c-0.084-2.415,0.834-4.8,2.521-6.545C22.816,18.921,24.967,18,27.258,18h45.49c2.291,0,4.442,0.921,6.057,2.593	c1.686,1.745,2.604,4.131,2.519,6.545c-0.127,3.677-0.002,8.959,1.318,13.241c1.294,4.19,3.373,6.366,6.355,6.65	c0.514,0.049,0.905,0.479,0.905,0.995v3.951c0,0.516-0.392,0.946-0.905,0.995c-2.982,0.284-5.062,2.46-6.355,6.65	c-1.32,4.282-1.445,9.564-1.318,13.241c0.085,2.414-0.833,4.8-2.519,6.545C77.19,81.079,75.039,82,72.748,82z M12.098,51.114	c3.353,0.683,5.764,3.341,7.176,7.917c1.405,4.551,1.541,10.071,1.406,13.901c-0.064,1.875,0.649,3.729,1.961,5.086	C23.875,79.296,25.515,80,27.258,80h45.49c1.743,0,3.384-0.704,4.618-1.982c1.311-1.356,2.024-3.211,1.959-5.085	c-0.134-3.831,0.003-9.353,1.406-13.901c1.412-4.576,3.822-7.234,7.171-7.917v-2.229c-3.349-0.683-5.759-3.341-7.171-7.917	c-1.403-4.549-1.54-10.07-1.406-13.901c0.065-1.874-0.648-3.729-1.959-5.085C76.132,20.704,74.491,20,72.748,20h-45.49	c-1.743,0-3.383,0.704-4.617,1.981c-1.312,1.357-2.025,3.211-1.961,5.086c0.135,3.83-0.001,9.351-1.406,13.901	c-1.412,4.576-3.823,7.234-7.176,7.917V51.114z"></path><path d="M27.258,77.5c-1.356,0-2.281-0.662-2.819-1.218c-0.843-0.873-1.301-2.063-1.26-3.264c0.141-4.022-0.009-9.843-1.516-14.725	c-1.108-3.589-2.82-6.243-5.09-7.89c-0.129-0.094-0.206-0.244-0.206-0.404s0.077-0.311,0.206-0.404	c2.27-1.646,3.981-4.301,5.09-7.89c1.507-4.882,1.656-10.702,1.516-14.726c-0.042-1.2,0.417-2.39,1.26-3.262	c0.538-0.557,1.463-1.219,2.819-1.219h45.49c1.357,0,2.282,0.663,2.819,1.219c0.843,0.872,1.302,2.062,1.259,3.262	c-0.01,0.276-0.217,0.504-0.518,0.482c-0.276-0.01-0.492-0.242-0.482-0.518c0.033-0.931-0.323-1.854-0.978-2.531	c-0.403-0.417-1.094-0.914-2.101-0.914h-45.49c-1.006,0-1.697,0.496-2.101,0.913c-0.654,0.678-1.012,1.602-0.979,2.532	c0.143,4.101-0.012,10.04-1.561,15.056c-1.088,3.523-2.745,6.211-4.933,7.999c2.188,1.788,3.845,4.476,4.933,7.999	c1.549,5.016,1.703,10.955,1.561,15.055c-0.033,0.932,0.324,1.855,0.979,2.534c0.403,0.416,1.095,0.912,2.101,0.912	c0.276,0,0.5,0.224,0.5,0.5S27.534,77.5,27.258,77.5z"></path><path d="M37.25,77.5h-4.125c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h4.125c0.276,0,0.5,0.224,0.5,0.5S37.526,77.5,37.25,77.5 z"></path><path d="M72.748,77.5H39.875c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h32.873c1.007,0,1.697-0.497,2.101-0.914	c0.654-0.678,1.011-1.601,0.978-2.532c-0.142-4.101,0.014-10.041,1.561-15.055c1.088-3.523,2.745-6.21,4.931-7.999	c-2.186-1.789-3.843-4.476-4.931-7.999c-0.082-0.264,0.066-0.544,0.33-0.625c0.263-0.085,0.544,0.066,0.625,0.33	c1.108,3.588,2.82,6.242,5.088,7.89c0.129,0.094,0.206,0.244,0.206,0.404s-0.077,0.311-0.206,0.404	c-2.268,1.647-3.979,4.302-5.088,7.89c-1.505,4.881-1.655,10.701-1.516,14.725c0.043,1.201-0.416,2.391-1.259,3.263	C75.03,76.837,74.105,77.5,72.748,77.5z"></path><path fill="#fff" d="M55.603,49.023v-0.051c3.379-0.584,6.016-3.751,6.016-7.24c0-2.466-0.948-4.555-2.743-6.04 c-1.788-1.48-4.299-2.263-7.259-2.263H38.056v33.127h13.631c3.542,0,6.482-0.865,8.502-2.502c2.023-1.639,3.092-4.024,3.092-6.898 C63.282,52.816,60.199,49.555,55.603,49.023z M49.253,47.461h-5.8v-9.697h6.901c3.786,0,5.87,1.661,5.87,4.677 C56.223,45.678,53.748,47.461,49.253,47.461z M43.452,51.521h6.854c4.952,0,7.462,1.789,7.462,5.317 c0,3.523-2.475,5.386-7.158,5.386h-7.158V51.521z"></path><path d="M51.688,67.057H38.056c-0.276,0-0.5-0.224-0.5-0.5V33.43c0-0.276,0.224-0.5,0.5-0.5h13.562 c3.079,0,5.699,0.822,7.578,2.378c1.912,1.583,2.924,3.805,2.924,6.425c0,3.063-1.923,5.911-4.621,7.164 c3.825,1.128,6.283,4.269,6.283,8.261c0,3.029-1.133,5.549-3.277,7.286C58.395,66.153,55.346,67.057,51.688,67.057z M38.556,66.057 h13.132c3.427,0,6.258-0.826,8.188-2.391c1.901-1.54,2.906-3.791,2.906-6.509c0-4.067-2.908-7.137-7.236-7.638 c-0.252-0.029-0.442-0.243-0.442-0.497v-0.05c0-0.243,0.175-0.451,0.415-0.493c3.141-0.542,5.602-3.506,5.602-6.747 c0-2.313-0.886-4.268-2.562-5.655c-1.697-1.404-4.098-2.147-6.94-2.147H38.556V66.057z M50.61,62.724h-7.158 c-0.276,0-0.5-0.224-0.5-0.5V51.521c0-0.276,0.224-0.5,0.5-0.5h6.854c6.581,0,7.963,3.163,7.963,5.817 C58.269,60.634,55.549,62.724,50.61,62.724z M43.952,61.724h6.658c4.418,0,6.658-1.644,6.658-4.886 c0-3.241-2.277-4.817-6.963-4.817h-6.354V61.724z M49.253,47.961h-5.801c-0.276,0-0.5-0.224-0.5-0.5v-9.697 c0-0.276,0.224-0.5,0.5-0.5h6.901c4.048,0,6.37,1.887,6.37,5.177C56.724,45.949,54.001,47.961,49.253,47.961z M43.952,46.961h5.301 c2.952,0,6.471-0.784,6.471-4.521c0-3.452-2.92-4.177-5.37-4.177h-6.401V46.961z"></path>
+                    </svg></li>
+                <li class="list-inline-item badge  m-1"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <path d="M 24 3 C 20.271429 3 18.240267 3.9470561 16.792969 4.5742188 A 1.50015 1.50015 0 0 0 16.791016 4.5742188 C 15.488673 5.1421213 14.704771 6.3187748 14.365234 7.4296875 C 14.025697 8.5406002 14 9.6506515 14 10.640625 A 1.50015 1.50015 0 1 0 17 10.640625 C 17 9.7405985 17.058912 8.8807279 17.234375 8.3066406 C 17.409838 7.7325533 17.572624 7.5063162 17.990234 7.3242188 C 19.540983 6.6519921 20.731377 6 24 6 C 27.268623 6 28.459017 6.6519922 30.009766 7.3242188 C 30.427376 7.5063161 30.590162 7.7325533 30.765625 8.3066406 C 30.941088 8.8807279 31 9.7405985 31 10.640625 L 31 15.253906 A 1.50015 1.50015 0 0 0 31 15.740234 L 31 19 C 31 20.950062 29.450062 22.5 27.5 22.5 L 20.5 22.5 C 16.928062 22.5 14 25.428062 14 29 L 14 31 L 10.640625 31 C 9.7405985 31 8.8807279 30.941088 8.3066406 30.765625 C 7.7325533 30.590162 7.5063162 30.427376 7.3242188 30.009766 C 6.6519921 28.459017 6 27.268623 6 24 C 6 20.731377 6.6519921 19.540983 7.3242188 17.990234 C 7.5063161 17.572624 7.7325533 17.409838 8.3066406 17.234375 C 8.8807279 17.058912 9.7405985 17 10.640625 17 L 23.5 17 A 1.50015 1.50015 0 1 0 23.5 14 L 10.640625 14 C 9.6506515 14 8.5406002 14.0257 7.4296875 14.365234 C 6.3187748 14.704771 5.1421212 15.488626 4.5742188 16.791016 L 4.5742188 16.792969 C 3.947056 18.24022 3 20.271429 3 24 C 3 27.728571 3.9470561 29.759733 4.5742188 31.207031 L 4.5742188 31.208984 C 5.1421212 32.511374 6.3187748 33.295229 7.4296875 33.634766 C 8.5406002 33.974256 9.6506515 34 10.640625 34 L 14 34 L 14 37.359375 C 14 38.349349 14.0257 39.459401 14.365234 40.570312 C 14.704771 41.681225 15.488626 42.857879 16.791016 43.425781 A 1.50015 1.50015 0 0 0 16.792969 43.425781 C 18.24022 44.052944 20.271429 45 24 45 C 27.728571 45 29.759733 44.052944 31.207031 43.425781 A 1.50015 1.50015 0 0 0 31.210938 43.423828 C 32.798882 42.730521 33.556928 41.185893 33.814453 39.837891 A 1.5002314 1.5002314 0 0 0 30.867188 39.275391 C 30.706712 40.115388 30.51982 40.453088 30.009766 40.675781 C 28.459024 41.348055 27.268623 42 24 42 C 20.731377 42 19.540983 41.348008 17.990234 40.675781 C 17.572624 40.493684 17.409838 40.267447 17.234375 39.693359 C 17.058912 39.119272 17 38.259401 17 37.359375 L 17 29 C 17 27.049938 18.549938 25.5 20.5 25.5 L 27.5 25.5 C 31.071938 25.5 34 22.571938 34 19 L 34 17 L 37.359375 17 C 38.259401 17 39.119272 17.05891 39.693359 17.234375 C 40.267447 17.409838 40.493684 17.572624 40.675781 17.990234 C 41.348008 19.540983 42 20.731377 42 24 C 42 27.268623 41.348008 28.459017 40.675781 30.009766 C 40.493684 30.427376 40.267447 30.590162 39.693359 30.765625 C 39.119272 30.941088 38.259401 31 37.359375 31 L 24.5 31 A 1.50015 1.50015 0 1 0 24.5 34 L 37.359375 34 C 38.349349 34 39.459401 33.9743 40.570312 33.634766 C 41.681225 33.295229 42.857879 32.511374 43.425781 31.208984 L 43.425781 31.207031 C 44.052944 29.75978 45 27.728571 45 24 C 45 20.271429 44.052944 18.240267 43.425781 16.792969 L 43.425781 16.791016 C 42.857879 15.488673 41.681225 14.704771 40.570312 14.365234 C 39.459401 14.025697 38.349349 14 37.359375 14 L 34 14 L 34 10.640625 C 34 9.6506515 33.974303 8.5406002 33.634766 7.4296875 C 33.295229 6.3187748 32.511374 5.1421213 31.208984 4.5742188 A 1.50015 1.50015 0 0 0 31.207031 4.5742188 C 29.75978 3.9470561 27.728571 3 24 3 z M 20.5 9 A 1.5 1.5 0 0 0 20.5 12 A 1.5 1.5 0 0 0 20.5 9 z M 27.5 36 A 1.5 1.5 0 0 0 27.5 39 A 1.5 1.5 0 0 0 27.5 36 z"></path>
+                    </svg></li>
+            </ul>
+        </div>
+    </div>
+</section>
+        <!-- Projects Section -->
+        <section id="projects" class="container my-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project-item">
+                        <img src="guess.png" alt="Project 1" class="project-img">
+                        <h4 class="project-title">Guessing Game</h4>
+                        <p class="project-description">This is a game made with the use of Python and Tkinter, it simulates a 3-digit guessing game.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-item">
+                        <img src="gtkm.png" target=none alt="Project 2" class="project-img">
+                        <h4 class="project-title">Get To Know Me</h4>
+                        <p class="project-description">This is made with the use of Kotlin language. This android app shows my journey throught out my college life.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-item">
+                        <img src="in between.JPG" alt="Project 3" class="project-img">
+                        <h4 class="project-title">In-Between</h4>
+                        <p class="project-description">This was also made the use of Python and it simulates the card game called In-Between</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--script-->
+    <script src="script.js"></script>
+</body>
+</html>
